@@ -11,11 +11,11 @@ package singlylinkedlist;
  * @author Noua Amine
  */
 public class SinglyLinkedList {
-    
+     
     private Item head;
     
     /*1. Append an element into the linkedlist*/
-    
+     
     public void appendElement(int d) {
 	head = new Item(d, head);
     }
@@ -57,5 +57,15 @@ public class SinglyLinkedList {
             }
 	}
     }
+    /* For printing the linkedlist */
+    public String toString() {
+		StringBuffer result = new StringBuffer();
+                if(this.head == null) result.append("List empty");
+                else
+		for (Item x=this.head; x!=null; x=x.getNext())
+			result.append(x.getD() + " ");
+
+		return result.toString();
+	}
     
 }
